@@ -48,8 +48,14 @@ class Robot
       stream: process.stdout,
       level: process.env.HUBOT_LOG_LEVEL or 'info'
     }]
-    if(process.env.HUBOT_LOG_GRAYLOG_IP)
-      stream = gelfStream.forBunyan(process.env.HUBOT_LOG_GRAYLOG_IP + (process.env.HUBOT_LOG_GRAYLOG_PORT ? ':' + process.env.HUBOT_LOG_GRAYLOG_PORT : ''))
+
+    port = ''
+
+    if process.env.HUBOT_LOG_GRAYLOG_IP
+      port = ':' + process.env.HUBOT_LOG_GRAYLOG_PORT
+
+    if process.env.HUBOT_LOG_GRAYLOG_IP
+      stream = gelfStream.forBunyan(process.env.HUBOT_LOG_GRAYLOG_IP + port)
       streams.push({type: 'raw', stream: stream})
 
     @name       = name
