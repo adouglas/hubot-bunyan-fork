@@ -16,12 +16,13 @@
   },
   "dependencies": {
     "async": ">=0.1.0 <1.0.0",
+    "bunyan": "^1.8.1",
     "chalk": "^1.0.0",
     "cline": "^0.8.2",
     "coffee-script": "1.6.3",
     "connect-multiparty": "^1.2.5",
     "express": "^3.21.2",
-    "log": "1.4.0",
+    "gelf-stream": "^1.1.1",
     "optparse": "1.0.4",
     "scoped-http-client": "0.11.0"
   },
